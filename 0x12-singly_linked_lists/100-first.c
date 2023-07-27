@@ -1,12 +1,15 @@
-#include <stdio.h>
+#include<stdio.h>
 
 /**
- * premain - function that runs before main
- *
- * Return: nothing
-*/
+ * myStartupFun - Apply the constructor attribute to myStartupFun() so that it
+ *   is executed before main()
+ */
+void myStartupFun(void) __attribute__ ((constructor));
 
-void __attribute__ ((constructor)) premain()
+/**
+ * myStartupFun - implementation of myStartupFun
+ */
+void myStartupFun(void)
 {
 	printf("You're beat! and yet, you must allow,\n");
 	printf("I bore my house upon my back!\n");
